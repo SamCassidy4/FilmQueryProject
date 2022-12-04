@@ -28,7 +28,7 @@ The user was also given an option to search for a movie using a keyword. This ke
 
 
 This project made use of Java and how it communicates with a database. This project required me to use many OOP concepts such as creating different classes that describe an actor and a film and the characteristics Java should look for to create an actor object or a film object. This also required me to use the concept of separation of concerns. When this concept was applied there was only one class in Java that knew about the SQL database. This allowed for better testability, clarity, and organization.
----
+
 
 
 [^1]: There is code that I left in that will find actors by the film Id. It is apart of an interface that can be implemented if one wishes
