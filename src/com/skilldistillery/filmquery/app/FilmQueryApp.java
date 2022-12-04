@@ -22,6 +22,7 @@ public class FilmQueryApp {
 		Scanner input = new Scanner(System.in);
 
 		startUserInterface(input);
+		// instantiating a new scanner after every case is best practice
 
 		input.close();
 	}

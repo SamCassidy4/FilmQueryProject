@@ -13,10 +13,11 @@ import com.skilldistillery.filmquery.entities.Film;
 
 public class DatabaseAccessorObject implements DatabaseAccessor {
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=US/Mountain";
-
+	// establishing database link
 	public DatabaseAccessorObject() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			//using the maven technology
 		} catch (ClassNotFoundException e) {
 			System.err.println("Error loading database Driver");
 			e.printStackTrace();
@@ -87,7 +88,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				actor.setId(actorResult.getInt("id"));
 				actor.setFirstName(actorResult.getString("first_name"));
 				actor.setLastName(actorResult.getString("last_name"));
-				// actor.setFilms(findFilmsByActorId(actorId)); // An Actor has Films
 				stmt.close();
 				conn.close();
 			}
@@ -144,9 +144,16 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + keyword + "%");
 			pstmt.setString(2, "%" + keyword + "%");
+			
+			// need two bind setString() methods for two bind variables
+			// need a setString() for each bind variable used
+			
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Film film = new Film();
+				// need to create film objects to set each film criteria
+				// movie is the name of our list
+				// it doesn't make sense to use movie here
 				film = new Film();
 				film.setId(rs.getInt("id"));
 				film.setTitle(rs.getString("title"));
@@ -163,6 +170,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				if (film.getTitle().toLowerCase().contains(keyword.toLowerCase())
 						|| (film.getDescription().toLowerCase().contains(keyword.toLowerCase()))) {
 					movie.add(film);
+					// instead we add all the films we made to the movie list here
 				}
 
 			}
