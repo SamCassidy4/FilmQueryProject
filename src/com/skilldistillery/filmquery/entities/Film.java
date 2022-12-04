@@ -8,13 +8,13 @@ public class Film {
 	private String title;
 	private String description;
 	private short releaseYear;
-	private int langId;
-	private int rentDur;
-	private double rate;
+	private int languageId;
+	private int rentalDuration;
+	private double rentalRate;
 	private int length;
-	private double repCost;
+	private double replacementCost;
 	private String rating;
-	private String features;
+	private String specialFeatures;
 	private List<Actor> actors;
 	private String language;
 	
@@ -22,26 +22,26 @@ public class Film {
 		
 	}
 
-	public Film(int id, String title, String description, short releaseYear, int langId, int rentDur, double rate,
-			int length, double repCost, String rating, String features, List<Actor> actors, String language) {
+	public Film(int id, String title, String description, short releaseYear, int languageId, int rentalDuration, double rentalRate,
+			int length, double replacementCost, String rating, String features, List<Actor> actors, String language) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.releaseYear = releaseYear;
-		this.langId = langId;
-		this.rentDur = rentDur;
-		this.rate = rate;
+		this.languageId = languageId;
+		this.rentalDuration = rentalDuration;
+		this.rentalRate = rentalRate;
 		this.length = length;
-		this.repCost = repCost;
+		this.replacementCost = replacementCost;
 		this.rating = rating;
-		this.features = features;
+		this.specialFeatures = features;
 		this.actors = actors;
 		this.language = language;
-		
-		
-
 	}
+		
+		
 
+	
 	public int getId() {
 		return id;
 	}
@@ -74,28 +74,28 @@ public class Film {
 		this.releaseYear = releaseYear;
 	}
 
-	public int getLangId() {
-		return langId;
+	public int getLanguageId() {
+		return languageId;
 	}
 
-	public void setLangId(int langId) {
-		this.langId = langId;
+	public void setLanguageId(int languageId) {
+		this.languageId = languageId;
 	}
 
-	public int getRentDur() {
-		return rentDur;
+	public int getRentalDuration() {
+		return rentalDuration;
 	}
 
-	public void setRentDur(int rentDur) {
-		this.rentDur = rentDur;
+	public void setRentalDuration(int rentalDuration) {
+		this.rentalDuration = rentalDuration;
 	}
 
-	public double getRate() {
-		return rate;
+	public double getRentalRate() {
+		return rentalRate;
 	}
 
-	public void setRate(double rate) {
-		this.rate = rate;
+	public void setRentalRate(double rentalRate) {
+		this.rentalRate = rentalRate;
 	}
 
 	public int getLength() {
@@ -106,12 +106,12 @@ public class Film {
 		this.length = length;
 	}
 
-	public double getRepCost() {
-		return repCost;
+	public double getReplacementCost() {
+		return replacementCost;
 	}
 
-	public void setRepCost(double repCost) {
-		this.repCost = repCost;
+	public void setReplacementCost(double replacementCost) {
+		this.replacementCost = replacementCost;
 	}
 
 	public String getRating() {
@@ -122,12 +122,12 @@ public class Film {
 		this.rating = rating;
 	}
 
-	public String getFeatures() {
-		return features;
+	public String getSpecialFeatures() {
+		return specialFeatures;
 	}
 
-	public void setFeatures(String features) {
-		this.features = features;
+	public void setSpecialFeatures(String specialFeatures) {
+		this.specialFeatures = specialFeatures;
 	}
 
 	public List<Actor> getActors() {
@@ -148,8 +148,8 @@ public class Film {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(actors, description, features, id, langId, language, length, rate, rating, releaseYear,
-				rentDur, repCost, title);
+		return Objects.hash(actors, description, specialFeatures, id, languageId, language, length, rentalRate, rating, releaseYear,
+				rentalDuration, replacementCost, title);
 	}
 
 	@Override
@@ -162,19 +162,19 @@ public class Film {
 			return false;
 		Film other = (Film) obj;
 		return Objects.equals(actors, other.actors) && Objects.equals(description, other.description)
-				&& Objects.equals(features, other.features) && id == other.id && langId == other.langId
+				&& Objects.equals(specialFeatures, other.specialFeatures) && id == other.id && languageId == other.languageId
 				&& Objects.equals(language, other.language) && length == other.length
-				&& Double.doubleToLongBits(rate) == Double.doubleToLongBits(other.rate)
-				&& Objects.equals(rating, other.rating) && releaseYear == other.releaseYear && rentDur == other.rentDur
-				&& Double.doubleToLongBits(repCost) == Double.doubleToLongBits(other.repCost)
+				&& Double.doubleToLongBits(rentalRate) == Double.doubleToLongBits(other.rentalRate)
+				&& Objects.equals(rating, other.rating) && releaseYear == other.releaseYear && rentalDuration == other.rentalDuration
+				&& Double.doubleToLongBits(replacementCost) == Double.doubleToLongBits(other.replacementCost)
 				&& Objects.equals(title, other.title);
 	}
 
 	@Override
 	public String toString() {
 		return "Film id:" + id + " Title: " + title + " \n Description: " + description + " \n Release Year:" + releaseYear
-				+ " Language Id: " + langId + " Rent Duration: " + rentDur + " \n Rate: " + rate + " \n Length: " + length + "\n Repair Cost: "
-				+ repCost + "\n Rating: " + rating + " \n Features: " + features + "\n Actors: " + actors + " \n Language: "
+				+ " Language Id: " + languageId + " Rent Duration: " + rentalDuration + " \n Rate: " + rentalRate + " \n Length: " + length + "\n Repair Cost: "
+				+ replacementCost + "\n Rating: " + rating + " \n Features: " + specialFeatures + "\n Actors: " + actors + " \n Language: "
 				+ language;
 	}
 	
